@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>QuickFeed - Connexion</title>
+        <link rel="shortcut icon" href="photo/apple-touch-icon.png">
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="css/style.css"
+    </head>
+
+
+<body>
+    <nav class="navigation">
+        <ul>
+            <li class="elementNav">
+                <a href="index.html">
+                    QuickFeed
+                </a>
+            </li>
+            <li class="elementNav">
+                <a href="page2.html">
+                    Produits
+                </a>
+            </li>
+            <li class="elementNav">
+                <a href="page3.html">
+                    Recettes
+                </a>
+            </li>
+            <li class="elementNav">
+                <a href="connexion.html">
+                    Connexion
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <form name="newCommand" action="#" class="box" id="new-command" onsubmit="return false">  
+   
+        <h3>Proposition de recettes</h3>
+        
+
+    
+    
+
+
+        
+
+    <strong>Choisissez votre premier ingrédient : </strong>
+    <select name="proteine" >       
+        <option value="boeuf">boeuf
+        <option value="fruits de mer">fruits de mer
+        <option value="nouilles">nouillles
+        <option value="feuilleBrick">feuille de brick
+        <option value="carotte">carotte
+        <option value="oignon">oignon
+    </select>
+    <br></br>
+    
+    <strong>Choisissez votre deuxième ingrédient : </strong>
+    <select name="pate" >
+        <option value="boeuf">boeuf
+        <option value="fruits de mer">fruits de mer
+        <option value="nouilles">nouillles
+        <option value="feuilleBrick">feuille de brick
+        <option value="carotte">carotte
+        <option value="oignon">oignon
+        </select>
+    </select>
+
+    <p>
+    <strong>Choisissez votre troisième ingrédient : </strong>
+    <select name="legume" >
+        <option value="boeuf">boeuf
+        <option value="fruits de mer">fruits de mer
+        <option value="nouilles">nouillles
+        <option value="feuilleBrick">feuille de brick
+        <option value="carotte">carotte
+        <option value="oignon">oignon
+        </select>
+    </select>
+ 
+  
+    <p> 
+     <button type="submit" class="btn" onclick="ajouterclient()">Ajouter</button>
+    
+    </form>
+
+
+    <main>
+        <div class="box">
+             
+            <table style="margin-right: auto; margin-left: auto;" class="datatable">
+                <thead>
+                
+                    <tr>
+                        <th>Nom de la recette</th>
+                        <th>Page de la recette</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        
+        </div>
+    
+    </main>
+
+    <script>
+        var newCommandForm = document.forms.newCommand; 
+        function ajouterclient(){
+        
+
+            const newItem = document.createElement('tr')
+            const proteineTd = document.createElement('td')
+            const pateTd = document.createElement('td')
+            const legumeTd = document.createElement('td')
+            let recetteTd = document.createElement('td')
+            var pageTd = document.createElement('pageTd')
+            proteineTd.textContent = document.newCommand.proteine.value
+            pateTd.textContent = document.newCommand.pate.value
+            legumeTd.textContent = document.newCommand.legume.value
+
+            console.log(proteineTd.textContent)
+            console.log(pateTd.textContent)
+            console.log(legumeTd.textContent)
+
+
+            if(proteineTd.textContent === "boeuf" && pateTd.textContent === "nouilles" && legumeTd.textContent === "carotte"){
+                recetteTd="nouilles au boeuf";
+                window.open("rec-nouilles-boeuf.html","datatable")
+                
+                document.div.table.thead.tr.appendChild(pageTd)
+            }
+            else if(proteineTd.textContent === "carotte" && pateTd.textContent === "boeuf" && legumeTd.textContent === "nouilles"){
+                recetteTd="nouilles au boeuf";
+            }
+            else if(proteineTd.textContent === "nouilles" && pateTd.textContent === "carotte" && legumeTd.textContent === "boeuf"){
+                recetteTd="nouilles au boeuf";
+            }
+            else if(proteineTd.textContent === "boeuf" && pateTd.textContent === "nouilles" && legumeTd.textContent === "oignon"){
+                recetteTd="nouilles au boeuf";
+            }
+            else if(proteineTd.textContent === "oignon" && pateTd.textContent === "boeuf" && legumeTd.textContent === "nouilles"){
+                recetteTd="nouilles au boeuf";
+            }
+            else if(proteineTd.textContent === "nouilles" && pateTd.textContent === "oignon" && legumeTd.textContent === "boeuf"){
+                recetteTd="nouilles au boeuf";
+            }
+            else if(proteineTd.textContent === "fruits de mer" && pateTd.textContent === "feuille de brick" && legumeTd.textContent === "oignon"){
+                recetteTd="pastilla aux fruits de mer";
+            }
+            else if(proteineTd.textContent === "oignon" && pateTd.textContent === "fruits de mer" && legumeTd.textContent === "feuille de brick"){
+                recetteTd="pastilla aux fruits de mer";
+            }
+            else if(proteineTd.textContent === "feuille de brick" && pateTd.textContent === "oignon" && legumeTd.textContent === "fruits de mer"){
+                recetteTd="pastilla aux fruits de mer";
+            }
+            else{
+                recetteTd="Aucune recette disponible"
+            }
+
+
+
+
+
+            
+
+            newItem.append(recetteTd,pageTd)
+            const table = document.querySelector('.datatable tbody')
+            table.appendChild(newItem)
+
+
+        }
+    </script>
+
+
+
+
+    
+
+
+    <footer>
+        <p>
+             &copy; 2022 QuickFeed Tous droits réservés
+        </p>
+    </footer>
+</body>
+</html>
